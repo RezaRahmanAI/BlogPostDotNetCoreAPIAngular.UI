@@ -4,6 +4,7 @@ import { HomeComponent } from './features/component/nav-manue/home/home.componen
 import { AboutComponent } from './features/component/nav-manue/about/about.component';
 import { CategoriesComponent } from './features/component/Category/categories/categories.component';
 import { CategoriesAddComponent } from './features/component/Category/categories-add/categories-add.component';
+import { EditCategoryComponent } from './features/component/Category/edit-category/edit-category.component';
 //import { NavbarComponent } from './core/navbar/navbar.component';
 
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'admin/categories', component: CategoriesComponent },
   { path: 'admin/categories/add', component: CategoriesAddComponent },
+  { path: 'admin/categories/edit/:id', component: EditCategoryComponent },
 ];
 
 @NgModule({

@@ -10,6 +10,7 @@ import { CategoriesAddComponent } from './features/component/Category/categories
 import { AboutComponent } from './features/component/nav-manue/about/about.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EditCategoryComponent } from './features/component/Category/edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     AboutComponent,
     CategoriesComponent,
-    CategoriesAddComponent,    
+    CategoriesAddComponent,
+    EditCategoryComponent,    
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
