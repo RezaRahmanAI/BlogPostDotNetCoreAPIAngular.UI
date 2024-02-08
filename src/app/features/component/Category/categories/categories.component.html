@@ -20,7 +20,8 @@
           <td>{{ category.id }}</td>
           <td>{{ category.name }}</td>
           <td>{{ category.urlHandle }}</td>
-          <td><a class="btn btn-primary" [routerLink]="['/admin/categories/edit',category.id]">Edit</a></td>
+          <td><a class="btn btn-primary" [routerLink]="['/admin/categories/edit',category.id]">Edit</a>
+            <button type="button" class="btn btn-danger ms-2" (click)="onDelete(category.id)">Delete</button>
         </tr>
       </tbody>
     </table>
