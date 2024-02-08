@@ -1,5 +1,50 @@
-<p>edit-category works!</p>
+<div class="container">
+  <h1>Edit Category</h1>
 
-<h3>
-    {{id}}
-</h3>
+  <ng-container *ngIf="category; else notFound">
+    <form #ngForm="ngForm" (ngSubmit)="onFormSubmit()">
+      <div class="form-control mt-3">
+        <div class="mt-2">
+          <label class="form-label" for="categoryId">Category Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="categoryId"
+            name="categoryId"
+            [(ngModel)]="category.id"
+            readonly
+          />
+        </div>
+
+        <div class="mt-2">
+          <label class="form-label" for="categoryName">Category Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="categoryName"
+            name="categoryName"
+            [(ngModel)]="category.name"
+          />
+        </div>
+
+        <div class="mt-2">
+          <label class="form-label" for="categoryUrlHandle">Category UrlHandle</label>
+          <input
+            type="text"
+            class="form-control"
+            id="categoryUrlHandle"
+            name="categoryUrlHandle"
+            [(ngModel)]="category.urlHandle"
+          />
+        </div>
+
+        <div class="mt-2">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+  <ng-template #notFound>
+    <div class="alert alert-warning" role="alert">Category Not Found!</div>
+  </ng-template>
+</div>
