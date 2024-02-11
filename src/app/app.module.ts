@@ -11,6 +11,8 @@ import { AboutComponent } from './features/component/nav-manue/about/about.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EditCategoryComponent } from './features/component/Category/edit-category/edit-category.component';
+import { BlogpostListComponent } from './features/component/BlogPost/blogpost-list/blogpost-list.component';
+import { AddBlogpostComponent } from './features/component/BlogPost/add-blogpost/add-blogpost.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { EditCategoryComponent } from './features/component/Category/edit-catego
     AboutComponent,
     CategoriesComponent,
     CategoriesAddComponent,
-    EditCategoryComponent,    
+    EditCategoryComponent,
+    BlogpostListComponent,
+    AddBlogpostComponent,    
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
