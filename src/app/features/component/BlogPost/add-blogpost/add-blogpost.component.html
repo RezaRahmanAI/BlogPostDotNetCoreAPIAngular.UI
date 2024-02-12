@@ -1,14 +1,14 @@
 <div class="container">
   <h1 class="card-title">Add BlogPost</h1>
 
-  <form>
-    <div class="mb-3">
+  <form #ngForm="ngForm" (ngSubmit)="onSubmit()">
+    <!-- <div class="mb-3">
       <label for="id" class="form-label">ID</label>
-      <input type="text" class="form-control" id="id" name="id" />
-    </div>
+      <input type="text" class="form-control" id="id" name="id" [(ngModel)]="model.title" />
+    </div> -->
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
-      <input type="text" class="form-control" id="title" name="title" />
+      <input type="text" class="form-control" id="title" name="title" [(ngModel)] = "model.title"/>
     </div>
     <div class="mb-3">
       <label for="description" class="form-label">Description</label>
@@ -17,15 +17,16 @@
         class="form-control"
         id="description"
         name="description"
+        [(ngModel)] = "model.description"
       />
     </div>
     <div class="mb-3">
       <label for="content" class="form-label">Content</label>
-      <textarea class="form-control" id="content" name="content"></textarea>
+      <textarea class="form-control" id="content" name="content" [(ngModel)] = "model.content"></textarea>
     </div>
     <div class="mb-3">
       <label for="urlHandle" class="form-label">URL Handle</label>
-      <input type="text" class="form-control" id="urlHandle" name="urlHandle" />
+      <input type="text" class="form-control" id="urlHandle" name="urlHandle" [(ngModel)] = "model.urlHandle"/>
     </div>
     <div class="mb-3">
       <label for="featureImgUrl" class="form-label">Feature Image URL</label>
@@ -34,6 +35,7 @@
         class="form-control"
         id="featureImgUrl"
         name="featureImgUrl"
+        [(ngModel)] = "model.featureImgUrl"
       />
     </div>
     <div class="mb-3">
@@ -43,11 +45,14 @@
         class="form-control"
         id="createdDate"
         name="createdDate"
-      />
+        value="{{model.createdDate}}"
+        [ngModel] = "model.createdDate | date:'yyyy-MM-dd'"
+        (ngModelChange)="model.createdDate = $event" 
+      >
     </div>
     <div class="mb-3">
       <label for="author" class="form-label">Author</label>
-      <input type="text" class="form-control" id="author" name="author" />
+      <input type="text" class="form-control" id="author" name="author" [(ngModel)] = "model.author"/>
     </div>
     <div class="form-check mb-3">
       <input
@@ -55,6 +60,7 @@
         type="checkbox"
         id="isVisible"
         name="isVisible"
+        [(ngModel)] = "model.isVisible"
       />
       <label class="form-check-label" for="isVisible"> Is Visible </label>
     </div>
